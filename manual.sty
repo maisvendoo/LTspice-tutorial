@@ -1,0 +1,127 @@
+%--------------------------------------------------------------------
+%
+%	Стилевой пакет для оформления руководства 
+%	по эксплуатации	в LaTeX
+%	(c) maisvendoo, 01.02.2017
+%
+%--------------------------------------------------------------------
+\RequirePackage[OT1,T2A]{fontenc}
+
+\RequirePackage[utf8]{inputenc}
+% Руссиш и инглиш с переносами
+\RequirePackage[english, russian]{babel}
+
+\addto\captionsrussian{\renewcommand\bibname{Библиографический список}}
+
+% Формулы, математические шрифты, ссылки, списки и прочее
+\RequirePackage{amsmath}
+\RequirePackage{amssymb, amsfonts, mathtext, cite, enumerate, float, color}
+
+% Гиперссылки
+\RequirePackage[pdftex, unicode, colorlinks, linkcolor=blue, citecolor=red, 
+bookmarksopen, pdfhighlight=/N, hyperindex=true]{hyperref}
+
+% Пакет для вставки рисунков
+\RequirePackage{graphicx}
+
+% Подключаем дополнительный пакет для шрифтов 14пт
+\RequirePackage[12pt]{extsizes}
+
+\RequirePackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+% Пакет для настройки интервалов
+\RequirePackage{setspace}
+
+%просто пакет для таблиц
+\RequirePackage{hhline}
+
+\RequirePackage{multirow}
+
+\RequirePackage{array}
+
+\RequirePackage{tabularx}
+
+\RequirePackage{makecell}
+
+\RequirePackage{color,colortbl}
+
+\RequirePackage{longtable}
+
+% Чтобы Приложение, Введение не нумеровалось
+%\RequirePackage{tocvsec2}
+
+\RequirePackage{bigstrut}
+
+\RequirePackage{paralist}
+
+\RequirePackage{pdfpages}
+
+% Команды преамбулы
+
+% Переопределяем интервал
+\renewcommand{\baselinestretch}{1.25}
+
+% Переопределяем списки
+\renewcommand{\theenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\theenumii}{.\arabic{enumii}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\theenumiii}{.\arabic{enumiii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+
+% Делаем рис. вместо рис:
+\RequirePackage[labelsep=period,figurewithin=none]{caption}
+
+% Нумерация рисунков - от начала главы
+%\renewcommand{\thefigure}{\arabic{figure}}
+% Нумерация формул - от начала главы
+\renewcommand{\theequation}{\thechapter\arabic{equation}}
+
+
+\renewcommand{\thetable}{\thechapter\arabic{table}}
+
+% Пакет переопределения формата заголовков
+\RequirePackage{titlesec}
+
+% Задаем формат заголовков глав
+\titleformat{\chapter}[hang]
+ {\filcenter\normalfont\Large\bfseries}{\thechapter}{0.2cm}{\Large}
+
+\titlespacing{\chapter}{1pt}{1pt}{8pt}[1pt]
+ 
+\renewcommand{\thechapter}{\arabic{chapter}.}
+
+% Задаем формат заголовков секций
+\titleformat{\section}[hang]
+ {\filright\normalfont\large\bfseries}{\thesection}{0.2cm}{\large}
+
+\titlespacing{\section}{14pt}{10pt}{14pt}[1pt] 
+ 
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}.}
+
+% Задаем формат подсекций
+\titleformat{\subsection}[hang]
+ {\filright\normalfont\large\bfseries}{\thesubsection}{0.2cm}{\large}
+ 
+\titlespacing{\subsection}{7pt}{10pt}{14pt}[1pt] 
+
+% Переопределяем счетчик подсекций
+\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.}
+
+%\addto{\captionsrussian}{\renewcommand{\chaptername}{Раздел}}
+
+\RequirePackage{mathtext}
+\RequirePackage{fixltx2e}
+%\RequirePackage{makeidx}
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1. \hfil}
+
+% Переопределяем команду построения оглавления
+\renewcommand{\tableofcontents}{\begin{center} \large \bf СОДЕРЖАНИЕ 
+\end{center} \@starttoc{toc}}
+
+% Включаем возможность использовать Times New Roman
+%\RequirePackage{fontspec} 
+%\RequirePackage{misccorr} 
+%\setmainfont{Times New Roman} 

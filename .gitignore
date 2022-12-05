@@ -1,0 +1,15 @@
+.kile/
+*.pdf
+*.aux
+*.backup
+*.out
+*.jpg
+*.png
+*.bmp
+*.idx
+*.log
+*.ilg
+*.ind
+*.toc
+*.gz
+*.dvi
